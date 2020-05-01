@@ -1,6 +1,8 @@
 clear all 
 close all
 
+% Example of HMM estimation by means of a spectral algorithm
+
 trans = [0.95,0.05; 0.10,0.90];
 emis = [1/6 1/6 1/6 1/6 1/6 1/6;
    1/10 1/10 1/10 1/10 1/10 1/2];

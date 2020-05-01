@@ -1,4 +1,5 @@
 function traj = SampleTrajMDP(P,u_opt,T)
+% Simulates MDP
 
 global TERMINAL_STATE_INDEX K
 traj = {};

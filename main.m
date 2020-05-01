@@ -220,7 +220,7 @@ options = optimoptions(@fminunc,'Algorithm','quasi-newton',... %Try different al
   'Hessian','off',...
   'DerivativeCheck','off');
 
-r0 = zeros(length(y_hat),1);
+r0 = zeros(length(y_hat),1); % weights initialization
 n = 40;
 lambda = logspace(-8, -4, n);
 

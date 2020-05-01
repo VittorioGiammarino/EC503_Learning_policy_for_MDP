@@ -1,4 +1,8 @@
 function O = ComputeObservationProbabilities(stateSpace, map)
+
+% Function used to simulate the HMM, given a state I have a noisy sensor
+% and it might measure something else
+
 global BASE PICK_UP TREE TERMINAL_STATE_INDEX K
 
 O=zeros(K,K);

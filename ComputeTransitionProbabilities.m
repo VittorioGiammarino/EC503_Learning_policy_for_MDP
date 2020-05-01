@@ -3,9 +3,6 @@ function P = ComputeTransitionProbabilities(stateSpace, map)
 % 	Compute the transition probabilities between all states in the state
 %   space for all control inputs.
 %
-%   P = ComputeTransitionProbabilities(stateSpace, map)
-%   computes the transition probabilities between all states in the state
-%   space for all control inputs.
 %
 %   Input arguments:
 %
@@ -122,11 +119,10 @@ for psi=0:1
                             zz=s+1;
                             zzz=s+2;
                             yyy=r+2;
-                            nzzz=s-2;
                             nyy=r-1;
                             nyyy=r-2;
                             nzz=s-1;
-                            
+                            nzzz=s-2;
                             %%%%%% CASE OF NO WIND
                             
                             %%% build the probability of being shooted or not

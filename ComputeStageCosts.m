@@ -1,4 +1,4 @@
-function G = ComputeStageCosts( stateSpace, map )
+function G = ComputeStageCosts(stateSpace, map )
 %COMPUTESTAGECOSTS Compute stage costs.
 % 	Compute the stage costs for all states in the state space for all
 %   control inputs.
@@ -19,7 +19,7 @@ function G = ComputeStageCosts( stateSpace, map )
 %
 %   Output arguments:
 %
-%       G:
+%       G:  L = action space
 %           A (K x L)-matrix containing the stage costs of all states in
 %           the state space for all control inputs. The entry G(i, l)
 %           represents the expected stage cost if we are in state i and
@@ -33,8 +33,8 @@ global TERMINAL_STATE_INDEX
 
 
 
-L=5;                                    % Number of possible control inputs
-G=zeros(K,L);                         % Set to zero the expected stage cost matrix
+L=5;                                    % Number of possible actions
+G=zeros(K,L);                           % Set to zero the expected stage cost matrix
 [M,N]=size(map);                        % size of the world
 [i_base,j_base]=find(map==BASE);        % (i,j) for the base cell
 [i_pickup,j_pickup]=find(map==PICK_UP); % (i,j) for pickup cell

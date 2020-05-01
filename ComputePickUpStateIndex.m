@@ -1,9 +1,7 @@
 function stateIndex = ComputePickUpStateIndex(stateSpace, map)
-%ComputeTerminalStateIndex Compute the index of the terminal state in the
+%ComputePickUpStateIndex Compute the index of the pickup state in the
 %stateSpace matrix
 %
-%   stateIndex = ComputeTerminalStateIndex(stateSpace, map) 
-%   Computes the index of the terminal state in the stateSpace matrix
 %   Input arguments:
 %       stateSpace:
 %           A (K x 3)-matrix, where the i-th row represents the i-th
@@ -16,14 +14,14 @@ function stateIndex = ComputePickUpStateIndex(stateSpace, map)
 %   Output arguments:
 %
 %       stateIndex:
-%           An integer that is the index of the terminal state in the
+%           An integer that is the index of the pickup state in the
 %           stateSpace matrix
 
 global PICK_UP
      [M,N]=size(map); % size of the world
      
-     % Now I check for each element (i,j) of the world in order to find the
-     % one correspondent to "drop off" cell.
+     % check for each element (i,j) of the world in order to find the
+     % one correspondent to "pickup" cell.
   
      for i=1:M
          for j=1:N
@@ -35,8 +33,8 @@ global PICK_UP
          end
      end
      
-     % Now I find the index of the row of state space matrix correspondent
-     % to the state where cell is "drop off" and the quadricopter is
-     % carrying the package (psi=1)
+     % find the index of the row of state space matrix correspondent
+     % to the state where cell is "pickup" and the quadricopter is
+     % not carrying the package (psi=0)
      stateIndex = find(ismember(stateSpace, [m n 0],'rows'));
 end

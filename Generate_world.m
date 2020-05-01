@@ -1,4 +1,7 @@
 function map = Generate_world(mapsize,ntrees,nshooters)
+% Generate_world generates randomly the world where the agent navigates
+
+
     if length(mapsize)~=2
         error("Mapsize wrong size, please specify the size of your 2D world")
     end

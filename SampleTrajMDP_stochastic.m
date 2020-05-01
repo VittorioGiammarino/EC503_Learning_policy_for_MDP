@@ -1,4 +1,5 @@
 function traj = SampleTrajMDP_stochastic(P,u_opt,T,initial_state)
+% Simulate MDP for Randomized Stationary Policy
 
 global TERMINAL_STATE_INDEX K
 traj = {};

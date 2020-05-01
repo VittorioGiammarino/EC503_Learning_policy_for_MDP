@@ -2,8 +2,6 @@ function stateIndex = ComputeTerminalStateIndex(stateSpace, map)
 %ComputeTerminalStateIndex Compute the index of the terminal state in the
 %stateSpace matrix
 %
-%   stateIndex = ComputeTerminalStateIndex(stateSpace, map) 
-%   Computes the index of the terminal state in the stateSpace matrix
 %   Input arguments:
 %       stateSpace:
 %           A (K x 3)-matrix, where the i-th row represents the i-th
@@ -22,7 +20,7 @@ function stateIndex = ComputeTerminalStateIndex(stateSpace, map)
 global DROP_OFF
      [M,N]=size(map); % size of the world
      
-     % Now I check for each element (i,j) of the world in order to find the
+     % check for each element (i,j) of the world in order to find the
      % one correspondent to "drop off" cell.
   
      for i=1:M
@@ -35,7 +33,7 @@ global DROP_OFF
          end
      end
      
-     % Now I find the index of the row of state space matrix correspondent
+     % find the index of the row of state space matrix correspondent
      % to the state where cell is "drop off" and the quadricopter is
      % carrying the package (psi=1)
      stateIndex = find(ismember(stateSpace, [m n 1],'rows'));
